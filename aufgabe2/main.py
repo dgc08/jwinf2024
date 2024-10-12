@@ -8,18 +8,12 @@ alph = 'abcdefghijklmnopqrstuvwxyzäöüß'
 def process_text(text):
     text = text.lower().strip()
 
-    ret_text = ""
+    ret = []
 
     for char in text:
         if char in alph:
-            ret_text += char
-
-    return ret_text
-
-def numberify(text):
-    ret = []
-    for char in text:
-        ret.append(alph.index(char)+1) # Man fängt bei 0 an zu zählen, 'a' soll aber 1 sein
+            ret.append(alph.index(char)+1) # Man fängt bei 0 an zu zählen, 'a' soll aber 1 sein
+        #else: # wird geskippt
 
     return ret
 
@@ -54,10 +48,6 @@ if __name__ == '__main__':
         print("Gebe den Dateinamen des zu testenden Textes an")
 
     with open(argv[1]) as f:
-        text = process_text(f.read())
-    #print(text)
-
-    numbers = numberify(text)
-    #print(numbers)
+        numbers = process_text(f.read())
 
     print("Der Gewinner ist Spieler", get_winner(numbers))
