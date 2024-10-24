@@ -21,6 +21,7 @@ def get_winner(numbers):
     nlen = len(numbers)
     if nlen < 2:
         print("Text ist zu klein, nicht jeder hat ein Startpunkt.")
+        exit(1)
     a = 0
     b = 1
 
@@ -46,6 +47,7 @@ def get_winner(numbers):
 if __name__ == '__main__':
     if len(argv) < 2:
         print("Gebe den Dateinamen des zu testenden Textes an")
+        exit(1)
 
     with open(argv[1]) as f:
         numbers = process_text(f.read())
