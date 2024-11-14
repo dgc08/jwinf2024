@@ -52,4 +52,6 @@ if __name__ == '__main__':
     with open(argv[1]) as f:
         numbers = process_text(f.read())
 
-    print("Der Gewinner ist Spieler", get_winner(numbers))
+    print(argv[1])
+    print("Spieler", get_winner(numbers), "gewinnt")
+    print()

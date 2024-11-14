@@ -1,0 +1,15 @@
+hopsen1.txt
+Spieler 1 gewinnt
+
+hopsen2.txt
+Spieler 1 gewinnt
+
+hopsen3.txt
+Spieler 1 gewinnt
+
+hopsen4.txt
+Spieler 2 gewinnt
+
+hopsen5.txt
+Spieler 1 gewinnt
+
