@@ -7,17 +7,17 @@ Gesamtanzahl Gärten
 garten0.txt
 6
 4
-36
+24
 
 garten1.txt
 4
 5
-16
+20
 
 garten2.txt
 8
 5
-64
+40
 
 garten3.txt
 11
@@ -27,10 +27,10 @@ garten3.txt
 garten4.txt
 270
 5
-72900
+1350
 
 garten5.txt
 308
 120
-94864
+36960
 

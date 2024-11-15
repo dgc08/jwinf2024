@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 from sys import argv
-from math import ceil, inf
+import math
 
-def q(x,y): # Funktion zur Bestimmung der "quadratischheit" eines Rechtecks
+def q(x,y): # Funktion zur Bestimmung der "Quadratischheit" eines Rechtecks
             # q(x,y) wird größer desto quadratischer die seitenlängen x und y sind, x==y ist "unendlich" quadratisch
     if (x == y):
-        return inf
+        return math.inf
     else:
         return abs(1/(1-x/y))
 
@@ -26,23 +26,24 @@ if __name__ == '__main__':
     best_q = 0
 
     for x in range(1, I+1):
-        y = ceil(I/x) #
-        while q(X/x,Y/y) < q(X/x,Y/(y+1)) and x*y < I*1.1:
-            y+=1
+        y = math.ceil(I/x) # Wenn kein int rauskommt, Aufrunden sodass man knapp über I ist
+        
+        while q(X/x,Y/y) < q(X/x,Y/(y+1)) and x*y < I*1.1: # solange die "Quadratischheit" größer wird und
+            y+=1                                           # man sich unter den 10% befindet, y erhöhen
 
-        if best_q < q(X/x,Y/y):
+        if best_q < q(X/x,Y/y): # Falls ein neuer bester Wert gefunden wurde
             best = (x,y)
             best_q = q(X/x,Y/y)
 
             if "-v" in argv:
-                print ("Neue beste Aufteilung gefunden: ", x, "*", y, "a", x*y, "Gärten")
+                print ("Neue Bestaufteilung: ", x, "*", y, "≙", x*y, "Gärten", f"(Bewertung: {q(X/x, Y/y):.2f})")
         # print(x,y,q(X/x,Y/y))
 
     if "-v" in argv:
-        print("\nErgebnis:", best[0], "*", best[1], "a", best[0]*best[1], "Gärten")
+        print("\nErgebnis:", best[0], "*", best[1], "≙", best[0]*best[1], "Gärten")
     else:
         print(argv[1])
         print(best[0])
         print(best[1])
-        print(best[0]*best[0])
+        print(best[0]*best[1])
         print()

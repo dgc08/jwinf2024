@@ -5,7 +5,7 @@ from sys import argv
 
 alph = 'abcdefghijklmnopqrstuvwxyzäöüß'
 
-def process_text(text):
+def process_text(text): # text zu einer liste an nummern umwandeln; buchstaben werden ihrem wert zugeordnet
     text = text.lower().strip()
 
     ret = []
